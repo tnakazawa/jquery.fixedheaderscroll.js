@@ -11,7 +11,6 @@
 	
 	$.fn.fixedHeaderScroll = function( options) {
 		
-			
 		var settings = $.extend( {
 			'headerSelector': 'header', // You need to designate the header element in your website.
 			'offset':         0, // You can offset the scroll position.
@@ -20,9 +19,7 @@
 			'smoothEasing':   'linear', // Scroll easing.
 		}, options);
 		
-		
-		this.click( function(){
-			
+		var fixScroll = function( targetSlector){
 			if( settings.headerSelector == false) {
 				var h = 0;
 			} else {
@@ -30,7 +27,7 @@
 				var h = headerEl.outerHeight();
 			}
 			
-			var targetEl = $( $(this).attr("href"));
+			var targetEl = $( targetSlector);
 			var t = targetEl.offset().top;
 			var s = t - h + settings.offset;
 			
@@ -41,9 +38,19 @@
 			} else {
 				$("html, body").scrollTop( s);
 			}
-			return false;
-			
-		});
+		}
 		
+		this.click( function(){
+			fixScroll( $(this).attr("href"));
+			return false;
+		});
+
+		$( window).on('load',function(){
+			if( location.hash) {
+				fixScroll( location.hash);
+				return false;
+			}
+		});
+
 	};
 })( jQuery );
