@@ -6,7 +6,7 @@ http://tasko.jp/
 
 ### Features
 * Smooth scroll
-* Auto adjust the fixed header
+* Auto adjust the fixed header position
 
 ### How to use
 ```html
@@ -23,7 +23,7 @@ http://tasko.jp/
 
 ### Options
 **headerSelector**  
-You have to designate header in a website.
+You need to designate the header element in your website.
 ```
 default: 'header'
 option: (string) jQuery selector or (boolean) false
@@ -37,7 +37,7 @@ option: (integer)
 ```
 
 **smooth**  
-You can decide if you use smooth scroll or not.
+You can choose if you use smooth scroll or not.
 ```
 default: true
 option: (boolean) true, false
