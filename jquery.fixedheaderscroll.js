@@ -35,7 +35,7 @@
             var s = t - h + settings.offset;
 
             if (settings.smooth) {
-                $("html, body").animate({
+                $("html, body").stop(true, false).animate({
                     scrollTop: s
                 }, settings.smoothDuration, settings.smoothEasing);
             } else {
