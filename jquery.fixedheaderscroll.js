@@ -28,7 +28,7 @@
             }
 
             var targetEl = $(targetSlector);
-            if( targetEl.size() < 1) {
+            if( targetEl.length < 1) {
                 return false;
             }
             var t = targetEl.offset().top;
